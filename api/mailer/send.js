@@ -1,6 +1,17 @@
 const nodemailer = require('nodemailer');
 
 module.exports = async (req, res) => {
+  // --- CORS HEADERS ---
+  res.setHeader('Access-Control-Allow-Origin', 'https://imcs-20e60.web.app');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // --- Handle OPTIONS (preflight) ---
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
