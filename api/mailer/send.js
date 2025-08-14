@@ -14,6 +14,7 @@ export default async function handler(req, res) {
     'https://imcs-20e60.web.app',     // your prod web app
     'http://localhost:3000',          // local dev
     'http://localhost:5174',          // local dev 2
+    'http://localhost:5173',          // local dev 3
     'https://imcs-mailer.vercel.app', // your primary vercel domain (optional)
   ]);
   const allowedRegex = [
